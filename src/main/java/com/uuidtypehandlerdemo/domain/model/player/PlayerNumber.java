@@ -6,13 +6,14 @@ public class PlayerNumber {
     UUID value;
 
     @Deprecated
-    public PlayerNumber(){}
+    public PlayerNumber() {
+    }
 
     private PlayerNumber(UUID value) {
         this.value = value;
     }
 
-    public static PlayerNumber from(UUID source){
+    public static PlayerNumber from(UUID source) {
         return new PlayerNumber(source);
     }
 
@@ -20,7 +21,7 @@ public class PlayerNumber {
         return value;
     }
 
-    public static PlayerNumber generate(){
+    public static PlayerNumber generate() {
         return new PlayerNumber(UUID.randomUUID());
     }
 

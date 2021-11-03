@@ -4,7 +4,8 @@ public class PlayerName {
     String value;
 
     @Deprecated
-    PlayerName(){}
+    PlayerName() {
+    }
 
     public PlayerName(String value) {
         this.value = value;

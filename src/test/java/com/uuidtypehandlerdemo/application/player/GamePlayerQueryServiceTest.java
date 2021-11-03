@@ -24,27 +24,27 @@ class GamePlayerQueryServiceTest {
     PlayerQueryService playerQueryService;
 
     @Test
-    void ユーザーをユーザー番号で検索できること(){
+    void ユーザーをユーザー番号で検索できること() {
         GamePlayer testTargetGamePlayer = GamePlayer.from(
                 PlayerNumber.from(UUID.fromString("530f9ad1-f3fc-4e22-a2f7-c4eeb4e41b78")),
                 new PlayerName("実在するユーザー")
         );
         GamePlayer result = playerQueryService.findGamePlayer(testTargetGamePlayer);
         assertAll(
-                ()->assertEquals(testTargetGamePlayer.playerNumber().value(), result.playerNumber().value()),
-                ()->assertNotNull(result.playerName().value())
+                () -> assertEquals(testTargetGamePlayer.playerNumber().value(), result.playerNumber().value()),
+                () -> assertNotNull(result.playerName().value())
         );
     }
 
     @Test
-    void 実在しないユーザー番号の結果が空であること(){
+    void 実在しないユーザー番号の結果が空であること() {
         GamePlayer testTargetGamePlayer = GamePlayer.from(
                 PlayerNumber.from(UUID.randomUUID()),
                 new PlayerName("実在しないユーザー")
         );
         GamePlayer result = playerQueryService.findGamePlayer(testTargetGamePlayer);
         assertAll(
-                ()->assertNull(result)
+                () -> assertNull(result)
         );
 
     }

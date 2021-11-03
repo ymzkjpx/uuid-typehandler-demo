@@ -16,7 +16,7 @@ public class PlayerRegisterService {
     /**
      * ゲームプレイヤーを登録する
      */
-    public void registerGamePlayer(GamePlayer gamePlayer){
+    public void registerGamePlayer(GamePlayer gamePlayer) {
         playerRepository.registerGamePlayer(gamePlayer);
     }
 }

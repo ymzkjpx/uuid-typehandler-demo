@@ -18,7 +18,6 @@ public class GamePlayerDatasource implements PlayerRepository {
     @Override
     public GamePlayer findGamePlayer(GamePlayer gamePlayer) {
         GamePlayer result = gamePlayerMapper.findGamePlayerByPlayerNumber(gamePlayer.playerNumber());
-//        if (result == null) throw new NotFoundGamePlayerException();
         return result;
     }
 

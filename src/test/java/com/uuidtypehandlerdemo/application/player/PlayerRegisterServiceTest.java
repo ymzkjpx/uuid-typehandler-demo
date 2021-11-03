@@ -24,14 +24,14 @@ class PlayerRegisterServiceTest {
 
     @Test
     @Transactional
-    void ゲームプレイヤーを登録できること(){
+    void ゲームプレイヤーを登録できること() {
         PlayerName testPlayerName = new PlayerName("ピザ配達人ヒロ");
         GamePlayer testTargetGamePlayer = GamePlayer.newGamePlayer(testPlayerName);
         playerRegisterService.registerGamePlayer(testTargetGamePlayer);
         GamePlayer result = playerQueryService.findGamePlayer(testTargetGamePlayer);
         assertAll(
-                ()->assertEquals(testTargetGamePlayer.playerNumber().value(), result.playerNumber().value()),
-                ()->assertEquals(testTargetGamePlayer.playerName().value(), result.playerName().value())
+                () -> assertEquals(testTargetGamePlayer.playerNumber().value(), result.playerNumber().value()),
+                () -> assertEquals(testTargetGamePlayer.playerName().value(), result.playerName().value())
         );
     }
 

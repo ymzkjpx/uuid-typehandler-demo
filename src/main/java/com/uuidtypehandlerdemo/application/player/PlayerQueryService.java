@@ -16,7 +16,7 @@ public class PlayerQueryService {
     /**
      * ゲームプレイヤーを検索する
      */
-    public GamePlayer findGamePlayer(GamePlayer gamePlayer){
+    public GamePlayer findGamePlayer(GamePlayer gamePlayer) {
         return playerRepository.findGamePlayer(gamePlayer);
     }
 }
