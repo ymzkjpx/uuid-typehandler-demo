@@ -1,6 +1,9 @@
 package com.uuidtypehandlerdemo.domain.model.player;
 
+import javax.validation.constraints.NotBlank;
+
 public class PlayerName {
+    @NotBlank(message = "名前を入力してください")
     String value;
 
     @Deprecated

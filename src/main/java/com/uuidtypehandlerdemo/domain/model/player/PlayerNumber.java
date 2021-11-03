@@ -2,7 +2,10 @@ package com.uuidtypehandlerdemo.domain.model.player;
 
 import java.util.UUID;
 
+import javax.validation.constraints.NotNull;
+
 public class PlayerNumber {
+    @NotNull(message = "UUIDv4を入力してください")
     UUID value;
 
     @Deprecated

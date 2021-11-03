@@ -1,7 +1,11 @@
 package com.uuidtypehandlerdemo.domain.model.player;
 
+import javax.validation.Valid;
+
 public class GamePlayer {
+    @Valid
     PlayerNumber playerNumber;
+    @Valid
     PlayerName playerName;
 
     @Deprecated
