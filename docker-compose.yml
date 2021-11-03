@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  postgresql:
+    container_name: postgres-for-uuid-typehandler-demo
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        - DB_LANG=ja_JP
+    ports:
+      - "15432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST_AUTH_METHOD=${POSTGRES_HOST_AUTH_METHOD}
+
+volumes:
+  database:
+    driver: local

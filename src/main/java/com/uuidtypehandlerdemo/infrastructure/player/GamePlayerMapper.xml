@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uuidtypehandlerdemo.infrastructure.player.GamePlayerMapper">
+    <select id="findGamePlayerByPlayerNumber" resultType="com.uuidtypehandlerdemo.domain.model.player.GamePlayer">
+        SELECT
+                  game_player.player_number AS "playerNumber.value"
+                , game_player.player_name AS "playerName.value"
+        FROM
+                player.game_player
+        WHERE
+                game_player.player_number = #{playerNumber.value}
+    </select>
+
+    <insert id="registerGamePlayer">
+        INSERT INTO
+                player.game_player (player_number ,player_name)
+        VALUES
+                (#{gamePlayer.playerNumber.value} ,#{gamePlayer.playerName.value})
+    </insert>
+</mapper>
